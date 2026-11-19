@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Travel Go – Explore the World | Premium Luxury Travel & Vacations</title>
+  <meta name="description" content="Discover breathtaking destinations, curated 5-star packages, and unforgettable experiences with Travel Go. Explore Bali, Paris, Swiss Alps, Dubai, Maldives, Tokyo, and more." />
+  <meta name="keywords" content="travel, vacation, luxury packages, explore the world, bali, swiss alps, maldives, travel go" />
+
+  <!-- OpenGraph Social Tags -->
+  <meta property="og:title" content="Travel Go – Explore the World" />
+  <meta property="og:description" content="Inspiring adventures, luxury itineraries, and seamless global travel." />
+  <meta property="og:image" content="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&q=80" />
+
+  <!-- Favicon -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%230284c7'><circle cx='12' cy='12' r='10'/><polygon points='16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76' fill='white'/></svg>" />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              sky: '#0284c7',
+              ocean: '#0c4a6e',
+              orange: '#f97316'
+            }
+          },
+          fontFamily: {
+            sans: ['Plus Jakarta Sans', 'system-ui', 'sans-serif'],
+            display: ['Outfit', 'Plus Jakarta Sans', 'sans-serif'],
+            editorial: ['Playfair Display', 'Georgia', 'serif']
+          }
+        }
+      }
+    };
+  </script>
+
+  <!-- Custom Styles -->
+  <link rel="stylesheet" href="css/custom.css" />
+
+  <!-- React 18 & ReactDOM 18 -->
+  <script src="https://unpkg.com/react@18/umd/react.production.min.js" crossorigin></script>
+  <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js" crossorigin></script>
+</head>
+<body class="bg-slate-50 text-slate-800 antialiased selection:bg-sky-500 selection:text-white">
+  <!-- React App Root Container -->
+  <div id="root">
+    <!-- Initial Loading State Skeleton while scripts load -->
+    <div class="min-h-screen flex flex-col items-center justify-center bg-slate-900 text-white space-y-4">
+      <div class="w-12 h-12 rounded-2xl bg-gradient-to-tr from-sky-500 to-sky-400 flex items-center justify-center animate-spin">
+        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <circle cx="12" cy="12" r="10" stroke-width="2"/>
+          <polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76" fill="currentColor"/>
+        </svg>
+      </div>
+      <div class="text-center">
+        <h2 class="text-xl font-black font-display tracking-tight text-white">Travel <span class="text-sky-400">Go</span></h2>
+        <p class="text-xs uppercase tracking-widest text-slate-400 mt-1">Explore the World</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Application Scripts in Order -->
+  <script src="data/travelData.js"></script>
+  <script src="js/components.js"></script>
+  <script src="js/pages.js"></script>
+  <script src="js/app.js"></script>
+
+  <!-- Mount React App -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      if (window.React && window.ReactDOM && window.TravelAppCore) {
+        var root = ReactDOM.createRoot(document.getElementById('root'));
+        root.render(React.createElement(window.TravelAppCore.App));
+      } else {
+        console.error('Failed to load React or TravelAppCore components');
+      }
+    });
+  </script>
+</body>
+</html>
